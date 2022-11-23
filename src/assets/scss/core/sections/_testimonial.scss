@@ -1,0 +1,196 @@
+.testimonial {
+
+	.section-inner {
+		padding-top: $testimonial--padding-t__mobile;
+		padding-bottom: $testimonial--padding-b__mobile;
+	}
+
+	.section-header {
+		padding-bottom: $testimonial-header--padding__mobile;
+	}
+
+	.section-header h2 {
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 150%;
+		text-align: center;
+		color: #F5FBF2;	
+	}
+
+	.tiles-wrap {
+		@if ( $testimonial-items--padding__mobile != null ) {
+			margin-right: -($testimonial-items--padding__mobile * 0.5);
+			margin-left: -($testimonial-items--padding__mobile * 0.5);
+			margin-top: -($testimonial-items--padding__mobile * 0.5);
+
+			&:last-of-type {
+				margin-bottom: -($testimonial-items--padding__mobile * 0.5);
+			}
+
+			&:not(:last-of-type) {
+				margin-bottom: ($testimonial-items--padding__mobile * 0.5);
+			}
+		}
+
+		&.push-left {
+
+			&::after {
+				flex-basis: $testimonial-item--width;
+				max-width: $testimonial-item--width;
+				@if ( $testimonial-items--padding__mobile != null ) {
+					padding-left: $testimonial-items--padding__mobile * 0.5;
+					padding-right: $testimonial-items--padding__mobile * 0.5;
+				}
+			}
+		}
+	}
+
+	.tiles-item {
+		flex-basis: $testimonial-item--width;
+		max-width: $testimonial-item--width;
+		@if ( $testimonial-items--padding__mobile != null ) {
+			padding: $testimonial-items--padding__mobile * 0.5;
+		}
+	}
+
+	.tiles-item-inner {
+		padding-top: $testimonial-item--inner-padding-v;
+		padding-bottom: $testimonial-item--inner-padding-v;
+		padding-left: $testimonial-item--inner-padding-h;
+		padding-right: $testimonial-item--inner-padding-h;
+	}
+}
+
+.testimonial-item-content {
+	flex-grow: 1;
+}
+
+.testimonial-item-source {
+	display: inline-flex; // to allow centering when using .content-center on a parent tag
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+@include media( '<=medium' ) {
+
+	.testimonial {
+		background-image: url("../../../images/digital.png");
+		background-repeat: no-repeat;
+	}
+
+	.tiles-wrap {
+		display: flex;
+		flex-direction: row;
+		 
+		img {
+			width: 32px;
+		}
+	}
+
+	.titles-content-item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		.char {
+			width: 38px;
+			left: 10%;
+		}
+
+		img {
+			width: 56px;
+    		height: 56px;
+		}
+	}
+
+	.titles-content-item-text {
+
+		width: 80%;
+		margin-top: 24px;
+		text-align: center;
+
+		p {
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 150%;
+			color: #80AB9E;
+			letter-spacing: 0.016em;
+		}
+	}
+
+}
+@include media( '>medium' ) {
+
+	.testimonial {
+		
+		margin-top: 222px;
+		background-image: url("../../../images/background-2.svg");
+		background-repeat: no-repeat;
+
+		.section-inner {
+			padding-top: $testimonial--padding-t__desktop;
+			padding-bottom: $testimonial--padding-b__desktop;
+		}
+
+		.titles-content {
+			width: 1239px;
+			height: 372px;
+			background: rgba(255, 202, 5, 0.1);
+			border-radius: 319.5px;
+			display: flex;
+			justify-content: center;
+		}
+
+		.titles-content-item {
+			width: 60%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.titles-content-item-text p {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 32px;
+			color: #80AB9E;
+		}
+
+		.section-header {
+			padding-bottom: $testimonial-header--padding__desktop;
+		}
+
+		@if ( $testimonial-items--padding__desktop != null ) {
+
+			.tiles-wrap {
+				margin-right: -($testimonial-items--padding__desktop * 0.5);
+				margin-left: -($testimonial-items--padding__desktop * 0.5);
+				margin-top: -($testimonial-items--padding__desktop * 0.5);
+
+				&:last-of-type {
+					margin-bottom: -($testimonial-items--padding__desktop * 0.5);
+				}
+
+				&:not(:last-of-type) {
+					margin-bottom: ($testimonial-items--padding__desktop * 0.5);
+				}
+
+				&.push-left {
+
+					&::after {
+						padding-left: $testimonial-items--padding__desktop * 0.5;
+						padding-right: $testimonial-items--padding__desktop * 0.5;
+					}
+				}
+			}
+
+			.tiles-item {
+				padding: $testimonial-items--padding__desktop * 0.5;
+			}
+		}
+
+		.titles-content-item-text p {
+			margin-left: 100px;
+		}
+	}
+}

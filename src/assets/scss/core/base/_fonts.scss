@@ -1,0 +1,8 @@
+@if ( $font--provider == 'Google Fonts' ) {
+    @import url('https://fonts.googleapis.com/css?family=#{$font--import}&display=swap');
+}
+
+@font-face {
+    font-family:'Gilroy';
+    src: url('../../../font/Gilroy/Gilroy-Light.otf') format('opentype');
+}

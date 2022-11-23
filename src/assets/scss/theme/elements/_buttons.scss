@@ -1,0 +1,23 @@
+.btn-signup {
+    height: 70px;
+    width: 206px;
+    border-radius: 5px;
+    padding: 24px 48px 24px 48px;
+    border: 1px solid #FFCA05;
+    color: #ECEDED;
+    background-color: transparent;
+}
+
+@include media( '<=medium' ) {
+
+    .btn-signup { 
+        gap: 8px;
+        height: 70px;
+        width: 206px;
+        padding: 24px 48px 24px 48px;
+        color: #ECEDED;
+        background-color: transparent;
+        border: 1px solid #FFCA05;
+        border-radius: 5px;
+    }
+}
