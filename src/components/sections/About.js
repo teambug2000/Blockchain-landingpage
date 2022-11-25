@@ -29,7 +29,7 @@ const About = ({
 }) => {
 
   const outerClasses = classNames(
-    'features-split section',
+    'features-split section pl-32 pr-32',
     topOuterDivider && 'has-top-divider',
     bottomOuterDivider && 'has-bottom-divider',
     hasBgColor && 'has-bg-color',

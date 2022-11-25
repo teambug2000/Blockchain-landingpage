@@ -16,7 +16,7 @@ const Logo = ({
   return (
     <div
       {...props}
-      className={classes}
+      className={classes} style={{marginLeft: '-10%'}}
     >
       <h1 className="m-0">
         <Link to="/">
