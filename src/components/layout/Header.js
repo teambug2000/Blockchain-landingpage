@@ -132,6 +132,15 @@ const Header = ({
                         <Link to="#0" onClick={closeMenu}>Community</Link>
                       </li>
                       <li>
+                        <select>
+                          <option>VI</option>
+                          <option>EN</option>
+                          <option>DE</option>
+                          <option>JA</option>
+                          <option>KR</option>
+                        </select>
+                      </li>
+                      <li>
                         <Link to="#0" className="button button-primary button-wide-mobile button-sm btn-signup" onClick={closeMenu}>Join for Free</Link>
                       </li>
                     </ul>}
