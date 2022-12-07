@@ -14,7 +14,7 @@ i18n
     },
     fallbackLng: "en",
     debug: false,
-    ns: ["common", "home", "profile"],
+    ns: ["common"],
 
     interpolation: {
       escapeValue: false,
@@ -24,3 +24,5 @@ i18n
       wait: true,
     },
   });
+
+export default i18n;

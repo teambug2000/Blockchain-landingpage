@@ -4,7 +4,8 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import Logo from "./partials/Logo";
 import Image from "../elements/Image";
-
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 const propTypes = {
   navPosition: PropTypes.string,
   hideNav: PropTypes.bool,
@@ -78,7 +79,16 @@ const Header = ({
     bottomOuterDivider && "has-bottom-divider",
     className
   );
+  const { i18n, t } = useTranslation(["common"]);
+  useEffect(() => {
+    if (localStorage.getItem("i18nextLng")?.length > 2) {
+      i18next.changeLanguage("en");
+    }
+  }, []);
 
+  const handleLanguageChange = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
   return (
     <header {...props} className={classes}>
       <div className="container">
@@ -119,26 +129,29 @@ const Header = ({
                     <ul className="list-reset header-nav-right">
                       <li>
                         <Link to="#0" onClick={closeMenu}>
-                          About us
+                          {t("About us")}
                         </Link>
                       </li>
                       <li>
                         <Link to="#0" onClick={closeMenu}>
-                          Services
+                          {t("Services")}
                         </Link>
                       </li>
                       <li>
                         <Link to="#0" onClick={closeMenu}>
-                          How it works
+                          {t("How it works")}
                         </Link>
                       </li>
                       <li>
                         <Link to="#0" onClick={closeMenu}>
-                          Community
+                          {t("Community")}
                         </Link>
                       </li>
                       <li>
-                        <select className="nav-link bg-dark border-0">
+                        <select
+                          value={localStorage.getItem("i18nextLng")}
+                          onChange={handleLanguageChange}
+                        >
                           <option value="vi">VI</option>
                           <option value="en">EN</option>
                           <option value="de">DE</option>
@@ -152,7 +165,7 @@ const Header = ({
                           className="button button-primary button-wide-mobile button-sm btn-signup"
                           onClick={closeMenu}
                         >
-                          Join for Free
+                          {t("Join for free")}
                         </Link>
                       </li>
                     </ul>
